@@ -3,24 +3,21 @@ import { ref } from 'vue'
 
 const isVisible = ref<boolean>(false)
 
-const open = () => {
-    isVisible.value = true
+const open = (): void => {
+  isVisible.value = true
 }
-const close = () => {
-    isVisible.value = false
+const close = (): void => {
+  isVisible.value = false
 }
 
-defineExpose({ 
-    open, 
-    close 
+defineExpose({
+  open,
+  close
 })
 </script>
 
 <template>
-    <div 
-        class="notification-container" 
-        :class="{ show: isVisible }"
-    >
-      <p>Вы уже вводили этот символ</p>
-    </div>  
+  <div class="notification-container" :class="{ show: isVisible }">
+    <p>Вы уже вводили этот символ</p>
+  </div>
 </template>
